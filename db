@@ -1,0 +1,49 @@
+import sqlite3
+from pathlib import Path
+
+# Path ke file database
+DB_PATH = Path(__file__).parent / "baligooo.db"
+
+# Membuat tabel database
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS places (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        category TEXT,
+        location TEXT,
+        description TEXT,
+        tips TEXT
+    )
+    """)
+    conn.commit()
+    conn.close()
+    print("✅ Database dan tabel berhasil dibuat:", DB_PATH)
+
+# Mengisi data tempat wisata Bali
+def seed_data():
+    data = [
+        ("Tanah Lot", "Temple", "Tabanan", "Pura di tepi laut dengan pemandangan sunset yang indah.", "Datang sore hari untuk lihat sunset."),
+        ("Tegallalang Rice Terrace", "Nature", "Ubud", "Sawah terasering yang sangat fotogenik.", "Datang pagi supaya tidak ramai."),
+        ("Campuhan Ridge Walk", "Trekking", "Ubud", "Jalur trekking dengan pemandangan bukit dan sawah yang tenang.", "Bawa air minum dan topi."),
+        ("Kuta Beach", "Beach", "Kuta", "Pantai populer untuk surfing dan sunset.", "Sore hari waktu terbaik untuk menikmati sunset."),
+        ("Uluwatu Temple", "Temple", "Badung", "Pura di tebing dengan pertunjukan tari Kecak yang terkenal.", "Datang sebelum jam 6 sore untuk nonton sunset."),
+        ("Sanur Beach", "Beach", "Denpasar", "Pantai yang tenang dengan sunrise cantik.", "Cocok untuk jalan pagi dan sarapan di tepi pantai."),
+        ("Nusa Penida", "Island", "Klungkung", "Pulau indah dengan pantai-pantai tersembunyi seperti Kelingking Beach.", "Gunakan sepatu nyaman dan bawa air minum."),
+        ("Mount Batur", "Mountain", "Bangli", "Gunung populer untuk pendakian sunrise.", "Mulai mendaki jam 3 pagi untuk sampai puncak sebelum matahari terbit."),
+    ]
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.executemany("""
+        INSERT INTO places (name, category, location, description, tips)
+        VALUES (?, ?, ?, ?, ?)
+    """, data)
+    conn.commit()
+    conn.close()
+    print("🌴 Data tempat wisata berhasil dimasukkan.")
+
+if __name__ == "__main__":
+    init_db()
+    seed_data()

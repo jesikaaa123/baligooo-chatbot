@@ -1,0 +1,5 @@
+# Jangan upload environment & data rahasia
+.env
+venv/
+__pycache__/
+db/baligooo.db

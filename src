@@ -1,0 +1,15 @@
+import os
+from dotenv import load_dotenv
+
+# Memuat file .env
+load_dotenv()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+DB_PATH = os.getenv("DB_PATH", "./db/baligooo.db")
+MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.5-flash")
+
+# Tes (optional)
+if not GOOGLE_API_KEY:
+    print("⚠️ GOOGLE_API_KEY belum terbaca, pastikan file .env sudah benar.")
+else:
+    print("✅ API key berhasil dimuat.")
