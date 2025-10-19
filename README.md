@@ -1,2 +1,28 @@
-# baligooo-chatbot
-Chatbot AI asisten wisata Bali menggunakan Gemini + Streamlit 
+#  Chatbot Baligooo – Asisten Wisata Bali
+
+**Baligooo** adalah chatbot berbasis **Streamlit** dan **AI Google Gemini 2.5 Flash** yang berperan sebagai **asisten wisata virtual** untuk membantu pengguna menemukan **tempat wisata terbaik di Bali**.  
+Chatbot ini dapat memberikan **rekomendasi destinasi, tips perjalanan, dan informasi lokasi** berdasarkan data wisata yang tersimpan di database lokal.
+
+---
+
+## Getting Started
+
+###  Prerequisites
+Pastikan Anda sudah menginstal **Python (versi 3.9 atau lebih baru)**.  
+Disarankan untuk menggunakan **Miniconda** atau **Conda** agar lebih mudah dalam pengelolaan environment.
+
+---
+
+###  Installation
+
+####  1. Install Miniconda (jika belum ada)
+Unduh dan instal Miniconda dari situs resmi:  
+[https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+
+---
+
+####  2. Buat Environment Baru
+Buka terminal atau Anaconda Prompt, lalu jalankan:
+```bash
+conda create -n baligooo-env python=3.9
+conda activate baligooo-env
