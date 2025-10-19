@@ -26,3 +26,14 @@ Buka terminal atau Anaconda Prompt, lalu jalankan:
 ```bash
 conda create -n baligooo-env python=3.9
 conda activate baligooo-env
+
+### Install Requirements
+Arahkan ke direktori proyek dan instal paket yang diperlukan:
+```bash
+pip install -r requirements.txt
+```
+### Run the Streamlit Application
+```bash
+streamlit run chatbot.py
+
+Aplikasi akan terbuka di web browser.
