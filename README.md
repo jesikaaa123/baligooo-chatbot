@@ -37,3 +37,11 @@ pip install -r requirements.txt
 streamlit run chatbot.py
 
 Aplikasi akan terbuka di web browser.
+
+### Tampilan awal
+![alt text](/awal.png)Tampilan awal 
+Lakukan input pertanyaan.
+
+### Percakapan dengan Baligooo
+![alt text](/hasil.png)
+Hasil akan memberikan rekomendasi yang user minta 
